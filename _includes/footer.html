@@ -2,18 +2,34 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-3">
+        <ul class="social-media-list">
+		{% for post in site.posts %}
+			<li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>&nbsp;&mdash;&nbsp;<span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span></li>
+		{% endfor %}
+		</ul>
+		<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<footer class="site-footer">
+
+  <div class="wrapper">
 
     <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
+		<div class="footer-col footer-col-3">
+          <p>{{ site.description }}</p>
+        </div>
+      <div class="footer-col footer-col-3">
         <ul class="social-media-list">
+			{% if site.facebook_username %}
+            <li>
+              {% include icon-facebook.html username=site.facebook_username %}
+            </li>
+            {% endif %}
+
           {% if site.github_username %}
           <li>
             {% include icon-github.html username=site.github_username %}
@@ -25,11 +41,19 @@
             {% include icon-twitter.html username=site.twitter_username %}
           </li>
           {% endif %}
-        </ul>
-      </div>
 
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description }}</p>
+		  {% if site.email_1 %}
+          <li>
+            {% include icon-email.html username=site.email_1 %}
+          </li>
+          {% endif %}
+
+		  {% if site.email_2 %}
+          <li>
+            {% include icon-email.html username=site.email_2 %}
+          </li>
+          {% endif %}
+        </ul>
       </div>
     </div>
 

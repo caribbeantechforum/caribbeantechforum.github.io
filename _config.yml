@@ -7,15 +7,13 @@
 
 # Site settings
 title: Caribbean Tech Forum
-email: nissan@caribbeantechforum.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+email_1: nissan@caribbeantechforum.com
+email_2: joanna@caribbeantechforum.com
+description: We're all about connecting Caribbean IT professionals and developers across industry spectrums and skill levels.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://caribbeantechforum.github.io" # the base hostname & protocol for your site
 twitter_username: carib_techforum
 github_username:  caribbeantechforum
-
+facebook_username: CaribbeanTechForum
 # Build settings
 markdown: kramdown
